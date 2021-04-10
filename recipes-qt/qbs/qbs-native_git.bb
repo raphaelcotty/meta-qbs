@@ -10,7 +10,6 @@ DEPENDS = "qtbase-native"
 SRCREV = "001bf31623c02ba8249dd066777d014d546eb7f9"
 
 SRC_URI = "gitsm://code.qt.io/qbs/qbs.git;branch=master;protocol=http"
-#SRC_URI = "gitsm:///home/raph/src/qbs/;branch=yocto;protocol=file"
 
 S = "${WORKDIR}/git"
 
