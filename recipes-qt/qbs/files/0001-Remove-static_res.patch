@@ -1,0 +1,27 @@
+From 284af99be917e56b52cfd66d9cf37bb7936e2729 Mon Sep 17 00:00:00 2001
+From: Raphael Cotty <raphael.cotty@gmail.com>
+Date: Sat, 10 Apr 2021 15:42:14 +0200
+Subject: [PATCH] Remove static_res
+
+Signed-off-by: Raphael Cotty <raphael.cotty@gmail.com>
+---
+ qbs.pro | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/qbs.pro b/qbs.pro
+index 0ec8d07b9..e7c675f95 100644
+--- a/qbs.pro
++++ b/qbs.pro
+@@ -54,8 +54,7 @@ SUBDIRS += \
+     src_app\
+     src_libexec\
+     src_plugins\
+-    static.pro\
+-    static_res
++    static.pro
+ 
+ !CONFIG(nomake_tests): SUBDIRS += tests
+ 
+-- 
+2.25.1
+

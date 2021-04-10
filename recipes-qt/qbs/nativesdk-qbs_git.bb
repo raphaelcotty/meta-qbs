@@ -10,6 +10,7 @@ DEPENDS = "nativesdk-qtbase"
 SRCREV = "001bf31623c02ba8249dd066777d014d546eb7f9"
 
 SRC_URI = "gitsm://code.qt.io/qbs/qbs.git;branch=master;protocol=http"
+SRC_URI += "file://0001-Remove-static_res.patch"
 
 S = "${WORKDIR}/git"
 
