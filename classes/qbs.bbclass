@@ -9,9 +9,11 @@ OE_QBS_QT_VERSION = "qt5"
 
 DEPENDS = "qbs-native"
 
+OE_QBS_BUILD_VARIANT = "${@oe.utils.conditional( "DEBUG_BUILD", "1", "debug", "release", d )}"
+
 qbs_do_compile()  {
     cd ${B}
-    ${OE_QBS_QBS} build --command-echo-mode command-line --no-install qbs.installPrefix:/usr --settings-dir ${OE_QBS_SETTINGS_DIR} --build-directory ${B} --file ${S} qbs.installRoot:${D} qbs.buildVariant:release profile:${OE_QBS_QT_VERSION}
+    ${OE_QBS_QBS} build --command-echo-mode command-line --no-install qbs.installPrefix:/usr --settings-dir ${OE_QBS_SETTINGS_DIR} --build-directory ${B} --file ${S} qbs.installRoot:${D} qbs.buildVariant:${OE_QBS_BUILD_VARIANT} profile:${OE_QBS_QT_VERSION}
 }
 
 do_compile() {
@@ -20,7 +22,7 @@ do_compile() {
 
 qbs_do_install()  {
     cd ${B}
-    ${OE_QBS_QBS} install --no-build qbs.installPrefix:/usr --settings-dir ${OE_QBS_SETTINGS_DIR} --build-directory ${B} --file ${S} --clean-install-root qbs.installRoot:${D} qbs.buildVariant:release profile:${OE_QBS_QT_VERSION}
+    ${OE_QBS_QBS} install --no-build qbs.installPrefix:/usr --settings-dir ${OE_QBS_SETTINGS_DIR} --build-directory ${B} --file ${S} --clean-install-root qbs.installRoot:${D} qbs.buildVariant:${OE_QBS_BUILD_VARIANT} profile:${OE_QBS_QT_VERSION}
 }
 
 python __anonymous () {
